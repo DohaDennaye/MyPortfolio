@@ -5,7 +5,7 @@ import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import { HashLink } from 'react-router-hash-link';
-import cv from "../assets/cv-doha-dennaye.pdf";
+import cv from "../assets/CV-DohaDennaye.pdf";
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -60,7 +60,7 @@ export const Banner = () => {
                   <h1>{`Hi! I'm Doha Dennaye`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Developpeuse web Full stack", "Full stack Developer", "Web Developer " ]'><span className="wrap">{text}</span></span></h1>
                   <p>Building digital experiences that blend creativity and technology — as a passionate Full Stack Web Developer, I design and develop modern, efficient, and user-focused applications that bring ideas to life.</p>
                   <button className="vvd" onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
-                  <a href={cv} download="CV-Doha-Dennaye.pdf" className="vvd" style={{ marginLeft: "15px" }}>
+                  <a href={cv} download="CV-DohaDennaye.pdf" className="btn-cv" style={{ marginLeft: "15px" }}>
                     Download CV
                   </a>
                 </div>}

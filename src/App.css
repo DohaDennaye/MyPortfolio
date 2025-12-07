@@ -454,6 +454,30 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   gap: 10px;
 
 }
+.banner .btn-cv {
+  color: #fff;
+  background: linear-gradient(90deg, #AA367C 0%, #4A2FBD 100%);
+  padding: 12px 25px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+  border: none;
+  border-radius: 50px;
+  margin-top: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.banner .btn-cv:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(171, 55, 125, 0.4);
+}
+
 
 .banner button svg {
   font-size: 25px;
