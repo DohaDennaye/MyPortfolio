@@ -3,7 +3,7 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/Capture3.PNG";
 import projImg2 from "../assets/img/Capture4.png";
 import projImg3 from "../assets/img/GEI.PNG";
-import projImg4 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/Capture5.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
@@ -11,6 +11,11 @@ import TrackVisibility from 'react-on-screen';
 export const Projects = () => {
 
   const projects = [
+    {
+      title: "Système de gestion de salaire et Employés",
+      description: "Laravel, HTML, Bootstrap",
+      imgUrl: projImg4,
+    },
     {
       title: "Système de gestion d'Importation",
       description: "TypeScript, Node.js, Express.js,Tailwind CSS",
