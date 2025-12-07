@@ -993,6 +993,40 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     padding: 50px 20px;
     margin-top: -80px;
   }
+   nav.navbar {
+    padding: 8px 0 !important;
+  }
+
+  body {
+    padding-top: 70px; /* évite que le banner passe sous la navbar */
+  }
+
+  .banner h1 {
+    word-wrap: break-word;
+    line-height: 1.2;
+    max-width: 100%;
+  }
+
+  .banner .container {
+    flex-direction: column-reverse;
+    gap: 22px;
+    text-align: center;
+  }
+    .banner .right img {
+    width: 50%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+.banner button,
+  .banner .btn-cv {
+    margin-top: 28px; /* avant : 60px → trop grand sur mobile */
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+
+  .banner {
+    padding-top: 100px !important;
+  }
 }
 
 /* Tablettes */
