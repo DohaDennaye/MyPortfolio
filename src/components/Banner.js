@@ -4,7 +4,6 @@ import doha from "../assets/img/doha.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
-import { HashLink } from 'react-router-hash-link';
 import cv from "../assets/CV-DohaDennaye1.pdf.pdf";
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
