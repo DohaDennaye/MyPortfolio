@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import doha from "../assets/img/doha.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -13,39 +13,41 @@ export const Banner = () => {
   const [index, setIndex] = useState(1);
   const toRotate = ["Developpeuse web Full stack", "Full stack Developer", "Web Developer "];
   const period = 2000;
-
+  
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
 
     return () => { clearInterval(ticker) };
-  }, [text])
+  }, [tick, delta]);
 
-  const tick = () => {
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+  const tick = useCallback(() => {
+  let i = loopNum % toRotate.length;
+  let fullText = toRotate[i];
+  let updatedText = isDeleting
+    ? fullText.substring(0, text.length - 1)
+    : fullText.substring(0, text.length + 1);
 
-    setText(updatedText);
+  setText(updatedText);
 
-    if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
-    }
-
-    if (!isDeleting && updatedText === fullText) {
-      setIsDeleting(true);
-      setIndex(prevIndex => prevIndex - 1);
-      setDelta(period);
-    } else if (isDeleting && updatedText === '') {
-      setIsDeleting(false);
-      setLoopNum(loopNum + 1);
-      setIndex(1);
-      setDelta(500);
-    } else {
-      setIndex(prevIndex => prevIndex + 1);
-    }
+  if (isDeleting) {
+    setDelta(prevDelta => prevDelta / 2);
   }
+
+  if (!isDeleting && updatedText === fullText) {
+    setIsDeleting(true);
+    setIndex(prevIndex => prevIndex - 1);
+    setDelta(period);
+  } else if (isDeleting && updatedText === '') {
+    setIsDeleting(false);
+    setLoopNum(prev => prev + 1);
+    setIndex(1);
+    setDelta(500);
+  } else {
+    setIndex(prevIndex => prevIndex + 1);
+  }
+}, [text, isDeleting, loopNum]);
 
   return (
     <section className="banner" id="home">
