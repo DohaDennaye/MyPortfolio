@@ -34,7 +34,7 @@ export const Banner = () => {
       setDelta(500);
     } else {
     }
-  }, [text, isDeleting, loopNum]);
+  }, [text, isDeleting, loopNum,toRotate]);
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
