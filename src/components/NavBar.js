@@ -9,8 +9,9 @@ import {
   BrowserRouter as Router
 } from "react-router-dom";
 
-export const NavBar = () => {
+import { Github } from 'react-bootstrap-icons';
 
+export const NavBar = () => {
   const [activeLink, setActiveLink] = useState('home');
   const [scrolled, setScrolled] = useState(false);
 
@@ -53,8 +54,9 @@ export const NavBar = () => {
                 <a href="https://www.linkedin.com/in/doha-dennaye-" target="_blank" rel="noopener noreferrer"><img src={navIcon1} alt="" /></a>
                 <a href="https://www.facebook.com/share/1DxkcGDc4r/" target="_blank" rel="noopener noreferrer"><img src={navIcon2} alt="" /></a>
                 <a href="https://www.instagram.com/dohadennaye" target="_blank" rel="noopener noreferrer"><img src={navIcon3} alt="" /></a>
+                <a href="https://github.com/DohaDennaye" target="_blank" rel="noopener noreferrer"><Github color="white" size={20} /></a>
               </div>
-              <HashLink to='#connect'>
+              <HashLink to='#email-section'>
                 <button className="vvd"><span>Lets Connect</span></button>
               </HashLink>
             </span>

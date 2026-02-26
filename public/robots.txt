@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dohadennayeportfolio.vercel.app/sitemap.xml
+Sitemap: https://dohadennaye.me/sitemap.xml

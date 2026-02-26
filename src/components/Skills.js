@@ -1,6 +1,4 @@
-import meter1 from "../assets/img/meter1.svg";
-import meter2 from "../assets/img/meter2.svg";
-import meter3 from "../assets/img/meter3.svg";
+import { CodeSlash, Terminal, Database, Tools, Award } from "react-bootstrap-icons";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import colorSharp from "../assets/img/color-sharp.png"
@@ -8,7 +6,6 @@ import colorSharp from "../assets/img/color-sharp.png"
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5
     },
@@ -26,41 +23,37 @@ export const Skills = () => {
     }
   };
 
+  const skillList = [
+    { title: "Front-end Development", icon: <CodeSlash size={60} color="#ff0080" /> },
+    { title: "Back-end Development", icon: <Terminal size={60} color="#7928ca" /> },
+    { title: "Database Management", icon: <Database size={60} color="#ff0080" /> },
+    { title: "DevOps & Tools", icon: <Tools size={60} color="#7928ca" /> },
+    { title: "Agile & Planning", icon: <Award size={60} color="#ff0080" /> },
+  ];
+
   return (
     <section className="skill" id="skills">
-        <div className="container">
-            <div className="row">
-                <div className="col-12">
-                    <div className="skill-bx wow zoomIn">
-                        <h2>Skills</h2>
-                        <p>Here is an overview of my technical skills and tools that I use to create modern and effective digital experiences.</p>
-                        <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
-                            <div className="item">
-                                <img src={meter1} alt="HTML" />
-                                <h5>Front-end Web Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter2} alt="HTML" />
-                                <h5>Back-End Web Development</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter3} alt="HTML" />
-                                <h5>Database & Data Management</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="HTML" />
-                                <h5>Tools & Development Workflow</h5>
-                            </div>
-                            <div className="item">
-                                <img src={meter1} alt="HTML" />
-                                <h5>Extra Skills:Agile Methodology (Scrum),Project Documentation & Planning</h5>
-                            </div>
-                        </Carousel>
+      <div className="container">
+        <div className="row">
+          <div className="col-12">
+            <div className="skill-bx wow zoomIn">
+              <h2>Technical Skills</h2>
+              <p>A showcase of the technologies and methodologies I've mastered to build scalable, high-performance web applications.</p>
+              <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
+                {skillList.map((skill, index) => (
+                  <div className="item" key={index}>
+                    <div className="skill-icon-wrap">
+                      {skill.icon}
                     </div>
-                </div>
+                    <h5>{skill.title}</h5>
+                  </div>
+                ))}
+              </Carousel>
             </div>
+          </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="HTML" />
+      </div>
+      <img className="background-image-left" src={colorSharp} alt="Color Sharp" />
     </section>
   )
 }
