@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback ,useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import doha from "../assets/img/doha.png";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
@@ -34,7 +34,7 @@ export const Banner = () => {
       setDelta(500);
     } else {
     }
-  }, [text, isDeleting, loopNum,toRotate]);
+  }, [text, isDeleting, loopNum, toRotate]);
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -56,7 +56,7 @@ export const Banner = () => {
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>{`Hi! I'm Doha Dennaye`} <span className="txt-rotate" dataPeriod="1000" data-rotate='["Developpeuse web Full stack", "Full stack Developer", "Web Developer " ]'><span className="wrap">{text}</span></span></h1>
                   <p>Building digital experiences that blend creativity and technology — as a passionate Full Stack Web Developer, I design and develop modern, efficient, and user-focused applications that bring ideas to life.</p>
-                  <button className="vvd" onClick={() => console.log('connect')}>Let’s Connect <ArrowRightCircle size={25} /></button>
+                  <button className="vvd" onClick={() => document.getElementById('email-section')?.scrollIntoView({ behavior: 'smooth' })}>Let’s Connect <ArrowRightCircle size={25} /></button>
                   <a href={cv} download="CV-DohaDennaye.pdf" className="btn-cv" style={{ marginLeft: "15px" }}>
                     Download CV
                   </a>
